@@ -1,9 +1,17 @@
+
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import { Kanit } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+
+const kanit = Kanit({
+  subsets: ["thai", "latin"], // รองรับภาษาไทย
+  weight: ["300", "400", "600"], // เลือกน้ำหนักฟอนต์
+  display: "swap",
+});
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "Personal Portfolio Website",
+  title: "Phassakorn's Portfolio",
+  description: "Developer Portfolio",
 };
 
 export default function RootLayout({
@@ -13,9 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
+      <body className={`${kanit.className} antialiased w-full min-h-screen`}>
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
   );
