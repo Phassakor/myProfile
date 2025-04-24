@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Loading from "../loading/page";
+import Hero from "@/components/Hero";
 
 
 export default function UserLayout({
@@ -36,6 +37,7 @@ export default function UserLayout({
     >
       <Navbar />
       <p className="mb-[70px]"></p>
+      <Hero />
       {children}
     </div>
   );
