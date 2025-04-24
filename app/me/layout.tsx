@@ -3,6 +3,8 @@
 import Navbar from "@/components/Navbar";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Loading from "../loading/page";
+
 
 export default function UserLayout({
   children,
@@ -15,22 +17,25 @@ export default function UserLayout({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setMounted(true);
-    }, 3000); // ⏱️ หน่วง 3 วินาที
+    }, 1000); // ⏱️ หน่วง 3 วินาที
 
     return () => clearTimeout(timeout); // เคลียร์ timeout ถ้า component unmount
   }, []);
 
-  if (!mounted) return null; // ❗️ป้องกัน hydration mismatch
+  if (!mounted) return (
+    <div className="flex items-center justify-center w-full h-screen">
+      <Loading />
+    </div>
+  );
 
   return (
     <div
-      className={`p-4 rounded transition-all duration-300 ${
-        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      className={`rounded transition-all duration-300 min-h-screen ${
+        theme === "dark" ? "DarkMode" : "LightMode"
       }`}
     >
       <Navbar />
       {children}
-      Hello! Current theme: {theme}
     </div>
   );
 }

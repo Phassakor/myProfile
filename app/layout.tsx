@@ -20,10 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${kanit.className} antialiased w-full min-h-screen`}>
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
-      </body>
-    </html>
+    <html lang="en" suppressHydrationWarning>
+    <body className={`${kanit.className} antialiased w-full min-h-screen`}>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
+        {children}
+      </ThemeProvider>
+    </body>
+  </html>
   );
 }

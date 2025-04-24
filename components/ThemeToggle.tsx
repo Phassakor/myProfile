@@ -11,11 +11,7 @@ export default function ThemeToggle() {
 
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setMounted(true);
-    }, 3000); // ⏱️ หน่วง 3 วินาที
-
-    return () => clearTimeout(timeout); // เคลียร์ timeout ถ้า component unmount
+    setMounted(true);
   }, []);
 
   if (!mounted) return null;

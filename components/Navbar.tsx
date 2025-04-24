@@ -1,22 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
+  const { theme } = useTheme();
+
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link
-          href="/"
-          className="text-xl font-bold text-blue-600 dark:text-blue-400"
+    <nav className={`${theme === "dark" ? "DarkModesection" : "LightModesection"} shadow-md sticky top-0 z-50"`}>
+      <div className="px-20 py-5 mx-auto flex justify-between items-center">
+        <p
+          className="text-xl font-bold text-[30px]"
         >
           MyPortfolio
-        </Link>
+        </p>
 
-        <div className="flex items-center space-x-4">
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
     </nav>
   );
