@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-    <body className={`${kanit.className} antialiased w-full min-h-screen`}>
+    <body className={`${kanit.className} antialiased w-full`}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
         {children}
       </ThemeProvider>

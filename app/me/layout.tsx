@@ -23,18 +23,19 @@ export default function UserLayout({
   }, []);
 
   if (!mounted) return (
-    <div className="flex items-center justify-center w-full h-screen">
+    <div className="flex items-center justify-center w-full max-w-[1920px] h-screen">
       <Loading />
     </div>
   );
 
   return (
     <div
-      className={`rounded transition-all duration-300 min-h-screen ${
+      className={`rounded transition-all duration-300 max-w-[1920px] mx-auto min-h-[cals(100vh-70px)] ${
         theme === "dark" ? "DarkMode" : "LightMode"
       }`}
     >
       <Navbar />
+      <p className="mb-[70px]"></p>
       {children}
     </div>
   );
