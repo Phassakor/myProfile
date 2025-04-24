@@ -1,5 +1,7 @@
 'use client';
 
+import "../app/backgroundprofile.css";
+
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useTheme } from "next-themes";
@@ -9,9 +11,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className={`min-h-screen flex items-center justify-center px-4 sm:px-8 ${` theme === "dark" ? "DarkMode" : "LightMode"`}`}
+      className={`min-h-screen flex items-center justify-center px-4 sm:px-8 ${theme === "dark" ? "DarkMode" : "LightMode"}`}
     >
-      <div className="max-w-3xl text-center">
+      <div className={`max-w-3xl text-center p-5 rounded-lg ${theme === "dark" ? "shadow-lg" : "shadow-lg"}`}>
         <motion.h1
           className="text-4xl sm:text-5xl font-extrabold mb-4"
           initial={{ opacity: 0, y: 20 }}
@@ -60,6 +62,20 @@ export default function Hero() {
           </Link>
         </motion.div>
       </div>
+
+      <div className="lines">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+    </div>
+      
     </section>
   );
 }
