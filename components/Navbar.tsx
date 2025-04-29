@@ -12,7 +12,7 @@ const navItems = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/me/contact" },
 ];
 
 export default function Navbar() {

@@ -17,9 +17,9 @@ export default function UserLayout({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setMounted(true);
-    }, 1000); // ⏱️ หน่วง 3 วินาที
+    }, 1000);
 
-    return () => clearTimeout(timeout); // เคลียร์ timeout ถ้า component unmount
+    return () => clearTimeout(timeout);
   }, []);
 
   if (!mounted) return (

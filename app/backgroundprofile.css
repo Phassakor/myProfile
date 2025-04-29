@@ -25,7 +25,7 @@
   
   .line {
     position: relative;
-    width: 5px;
+    width: 7px;
     height: 100%;
     /*background: #ffffff;  /* Line color */
     overflow: hidden;
