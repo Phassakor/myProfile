@@ -41,26 +41,6 @@ export default function Hero() {
           ผมรักการสร้างเว็บไซต์ที่เร็ว สวย และใช้งานง่าย ด้วยประสบการณ์ใน Next.js, Tailwind และ UX ที่ดี
         </motion.p>
 
-        <motion.div
-          className="flex justify-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          <Link
-            href="#projects"
-            className="px-5 py-3 bg-blue-600 text-white rounded-2xl shadow hover:bg-blue-700 transition"
-          >
-            ดูโปรเจกต์
-          </Link>
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            className="px-5 py-3 border border-blue-600 text-blue-600 rounded-2xl hover:bg-blue-50 dark:hover:bg-blue-950 transition"
-          >
-            ดาวน์โหลด Resume
-          </Link>
-        </motion.div>
       </div>
 
       <div className="lines">
