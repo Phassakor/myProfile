@@ -1,7 +1,7 @@
-export default function Myprofile() {
+export default function About() {
     return (
       <div className=" text-white">
-          <p>Myprofile</p>
+          <p>About</p>
       </div>
     );
   }
