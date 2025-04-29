@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import Loading from "@/app/loading/page";
+import { useEffect, useState } from "react";
 
 const projects = [
   {
@@ -35,6 +37,21 @@ const fadeUp = {
 };
 
 export default function Projects() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setMounted(true);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (!mounted)
+    return (
+      <div className="flex items-center justify-center w-full max-w-[1920px] h-[calc(100vh-70px)]">
+        <Loading />
+      </div>
+    );
   return (
     <motion.section
       id="projects"

@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Loading from "@/app/loading/page";
+import { useEffect, useState } from "react";
 
 const experiences = [
   {
@@ -27,6 +29,21 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setMounted(true);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (!mounted)
+    return (
+      <div className="flex items-center justify-center w-full max-w-[1920px] h-[calc(100vh-70px)]">
+        <Loading />
+      </div>
+    );
   return (
     <section
       id="experience"

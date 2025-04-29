@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 .lds_spinner {
-  color: #FF0000;
   display: inline-block;
   position: relative;
   width: 80px;
@@ -24,7 +23,7 @@
   width: 6.4px;
   height: 17.6px;
   border-radius: 20%;
-  background: #FF0000;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 .lds_spinner div:nth-child(1) {
   transform: rotate(0deg);

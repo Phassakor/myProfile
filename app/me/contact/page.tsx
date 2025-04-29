@@ -3,6 +3,8 @@
 import { Mail, MapPin, Phone, LineChart, } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Loading from "@/app/loading/page";
+import { useEffect, useState } from "react";
 
 export default function Contact() {
   const fadeUp = {
@@ -13,7 +15,21 @@ export default function Contact() {
       transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
     }),
   };
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setMounted(true);
+    }, 500);
 
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (!mounted)
+    return (
+      <div className="flex items-center justify-center w-full max-w-[1920px] h-[calc(100vh-70px)]">
+        <Loading />
+      </div>
+    );
   return (
     <section className="pt-10">
       <motion.section
