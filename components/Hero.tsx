@@ -13,7 +13,7 @@ export default function Hero() {
       id="home"
       className={`min-h-screen flex items-center justify-center px-4 sm:px-8 ${theme === "dark" ? "DarkMode" : "LightMode"}`}
     >
-      <div className={`max-w-3xl text-center p-5 rounded-lg ${theme === "dark" ? "shadow-lg" : "shadow-lg"}`}>
+      <div className={`max-w-3xl text-center p-5 rounded-lg transition-all duration-500 ease-in-out h-[250px] hover:h-[400px] z-10 ${theme === "dark" ? "shadow-lg" : "shadow-lg"}`}>
         <motion.h1
           className="text-4xl sm:text-5xl font-extrabold mb-4"
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function Hero() {
 
       </div>
 
-      <div className="lines">
+      <div className="lines z-0">
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
