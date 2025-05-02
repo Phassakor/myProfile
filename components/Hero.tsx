@@ -3,7 +3,6 @@
 import "../app/backgroundprofile.css";
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { useTheme } from "next-themes";
 
 export default function Hero() {
@@ -20,7 +19,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          สวัสดีครับ ผมชื่อ [Your Name]
+          สวัสดีครับ ผมชื่อ Best
         </motion.h1>
 
         <motion.h2

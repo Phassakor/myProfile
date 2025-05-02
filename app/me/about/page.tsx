@@ -59,14 +59,14 @@ export default function About() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Profile Image */}
         <motion.div custom={1} variants={fadeUp} className="flex-shrink-0">
-          <Image
-            src="/images/ingo.jpg"
-            alt="Profile"
-            width={250}
-            height={250}
-            className="rounded-full object-cover border-4 border-blue-500 shadow-lg"
-            priority
-          />
+        <Image
+          src="/images/devImg.png"
+          alt="MyDev"
+          width={250}
+          height={250}
+          className="rounded-full object-cover border-4 border-blue-500 shadow-lg"
+          priority
+        />
         </motion.div>
 
         {/* About Content */}

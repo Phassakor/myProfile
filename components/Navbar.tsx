@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { usePathname } from 'next/navigation';
 
 const navItems = [
   { name: "Home", href: "/me/home" },
@@ -18,6 +19,7 @@ const navItems = [
 export default function Navbar() {
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header
@@ -30,7 +32,7 @@ export default function Navbar() {
         <p
           className="text-xl font-bold"
         >
-          YourName
+          Phassakorn Suwannato
         </p>
 
         {/* Desktop Menu */}
@@ -39,7 +41,11 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-blue-500 dark:hover:text-blue-400"
+              className={`text-sm font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors ${
+                pathname === item.href
+                ? 'text-blue-500 border-b-2 border-blue-500'
+                : 'text-gray-700 dark:text-gray-300'
+              }`}
             >
               {item.name}
             </Link>
