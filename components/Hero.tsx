@@ -19,7 +19,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          สวัสดีครับ ผมชื่อ Best
+          สวัสดีครับ ผมชื่อ BesT
         </motion.h1>
 
         <motion.h2

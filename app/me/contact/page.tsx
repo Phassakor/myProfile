@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, Phone, LineChart, } from "lucide-react";
+import { Mail, MapPin, Phone, GitBranch, } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Loading from "@/app/loading/page";
@@ -59,24 +59,24 @@ export default function Contact() {
         <div className="max-w-xl mx-auto space-y-6 text-left">
           {[
             {
-              icon: <Mail className="" />,
-              text: "you@example.com",
+              icon: <Mail />,
+              text: "best20865@gmail.com",
               delay: 2,
             },
             {
-              icon: <Phone className="" />,
-              text: "+66 812345678",
+              icon: <Phone />,
+              text: "+66 961479734",
               delay: 3,
             },
             {
-              icon: <MapPin className="" />,
+              icon: <MapPin />,
               text: "Bangkok, Thailand",
               delay: 4,
             },
             {
-              icon: <LineChart className="" />,
-              text: "github.com/yourusername",
-              link: "https://github.com/yourusername",
+              icon: <GitBranch />,
+              text: "github.com/Phassakorn",
+              link: "https://github.com/Phassakor/myProfile",
               delay: 5,
             },
            

@@ -43,7 +43,7 @@ export default function Navbar() {
               href={item.href}
               className={`text-sm font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors ${
                 pathname === item.href
-                ? 'text-blue-500 border-b-2 border-blue-500'
+                ? 'text-blue-500 border-b-2 border-blue-500 neon-text'
                 : 'text-gray-700 dark:text-gray-300'
               }`}
             >
