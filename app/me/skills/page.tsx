@@ -20,6 +20,7 @@ import {
   SiTailwindcss,
   SiSass,
   SiDotnet, 
+  SiGo,
   SiMysql,
   SiBootstrap,
   SiNuxtdotjs,
@@ -46,6 +47,7 @@ const skills = [
     items: [
       { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
       { name: '.NET', icon: <SiDotnet className="text-purple-700" /> },
+      { name: 'Golang', icon: <SiGo className="text-sky-600" /> },
       { name: 'MySQL', icon: <SiMysql className="text-blue-600" /> },
     ],
   },

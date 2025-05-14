@@ -6,23 +6,23 @@ import { useEffect, useState } from "react";
 
 const experiences = [
   {
-    company: 'Freelance',
+    company: 'Full-time / Freelance',
     role: 'Frontend Developer',
-    date: 'Jan 2024 – Present',
+    date: '2022 – Present',
     description:
-      'Developed responsive websites using React, Next.js, and Tailwind. Collaborated with clients on UI/UX, and deployed with Vercel.',
+      'Developed responsive websites using React, Next, Vue, Nuxt, Angular, and Tailwind. Collaborated with clients on UI/UX, and deployed with Vercel.',
   },
   {
     company: 'Personal Project',
     role: 'Fullstack Dev (Learning)',
     date: '2023 – Present',
     description:
-      'Built fullstack projects with Node.js, .NET, and MySQL. Focused on REST APIs and Authentication.',
+      'Built fullstack projects with Node.js, .NET, Golang, and MySQL. Focused on REST APIs and Authentication.',
   },
   {
     company: 'University',
     role: 'IT Student',
-    date: '2021 – Present',
+    date: '2020 – Present',
     description:
       'Studying web development, software engineering, and contributing to open-source class projects.',
   },
