@@ -26,49 +26,13 @@ import {
   SiNuxtdotjs,
   SiAngular 
 } from 'react-icons/si';
-
-const skills = [
-  {
-    title: 'Frontend',
-    items: [
-      { name: 'HTML5', icon: <FaHtml5 className="text-orange-500" /> },
-      { name: 'CSS3', icon: <FaCss3Alt className="text-blue-500" /> },
-      { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
-      { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> },
-      { name: 'React', icon: <FaReact className="text-sky-500" /> },
-      { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white" /> },
-      { name: 'Vue.js', icon: <FaVuejs className="text-green-500" /> },
-      { name: 'Nuxt.js', icon: <SiNuxtdotjs className="text-emerald-500" /> },
-      { name: 'Angular', icon: <SiAngular className="text-red-600" /> }
-    ],
-  },
-  {
-    title: 'Backend (Studying)',
-    items: [
-      { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
-      { name: '.NET', icon: <SiDotnet className="text-purple-700" /> },
-      { name: 'Golang', icon: <SiGo className="text-sky-600" /> },
-      { name: 'MySQL', icon: <SiMysql className="text-blue-600" /> },
-    ],
-  },
-  {
-    title: 'Styling',
-    items: [
-      { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-teal-400" /> },
-      { name: 'Sass', icon: <SiSass className="text-pink-400" /> },
-      { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-600" /> }, // ✅ เพิ่มตรงนี้
-    ],
-  },
-  {
-    title: 'Tools',
-    items: [
-      { name: 'Git', icon: <FaGitAlt className="text-orange-600" /> },
-      { name: 'GitHub', icon: <FaGithub className="text-black dark:text-white" /> },
-      { name: 'Figma', icon: <FaFigma className="text-purple-500" /> }
-    ],
-  },
-];
-
+import en from "../../../locales/en.json";
+import th from "../../../locales/th.json";
+import { useLanguage } from "@/contexts/LanguageContext";
+const translations = {
+  en,
+  th,
+};
 
 const container = {
   hidden: {},
@@ -86,6 +50,48 @@ const itemAnim = {
 
 export default function Skills() {
   const [mounted, setMounted] = useState(false);
+  const { lang } = useLanguage();
+  const skills = [
+    {
+      title: translations[lang].skill.section1,
+      items: [
+        { name: 'HTML5', icon: <FaHtml5 className="text-orange-500" /> },
+        { name: 'CSS3', icon: <FaCss3Alt className="text-blue-500" /> },
+        { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+        { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> },
+        { name: 'React', icon: <FaReact className="text-sky-500" /> },
+        { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white" /> },
+        { name: 'Vue.js', icon: <FaVuejs className="text-green-500" /> },
+        { name: 'Nuxt.js', icon: <SiNuxtdotjs className="text-emerald-500" /> },
+        { name: 'Angular', icon: <SiAngular className="text-red-600" /> }
+      ],
+    },
+    {
+      title: translations[lang].skill.section2,
+      items: [
+        { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
+        { name: '.NET', icon: <SiDotnet className="text-purple-700" /> },
+        { name: 'Golang', icon: <SiGo className="text-sky-600" /> },
+        { name: 'MySQL', icon: <SiMysql className="text-blue-600" /> },
+      ],
+    },
+    {
+      title: translations[lang].skill.section3,
+      items: [
+        { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-teal-400" /> },
+        { name: 'Sass', icon: <SiSass className="text-pink-400" /> },
+        { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-600" /> }, // ✅ เพิ่มตรงนี้
+      ],
+    },
+    {
+      title: translations[lang].skill.section4,
+      items: [
+        { name: 'Git', icon: <FaGitAlt className="text-orange-600" /> },
+        { name: 'GitHub', icon: <FaGithub className="text-black dark:text-white" /> },
+        { name: 'Figma', icon: <FaFigma className="text-purple-500" /> }
+      ],
+    },
+  ];
   useEffect(() => {
     const timeout = setTimeout(() => {
       setMounted(true);
@@ -113,7 +119,7 @@ export default function Skills() {
         className="text-4xl font-bold text-center mb-12"
         variants={itemAnim}
       >
-        Skills & Tools
+      {translations[lang].skill.title}
       </motion.h2>
 
       <div className="max-w-6xl mx-auto space-y-12">

@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "fullname": "Phassakorn Suwannato",
+    "home": "Home",
+    "about": "About",
+    "skill": "Skills",
+    "project": "Project",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hello! My name is BesT",
+    "subtitle": "Frontend Developer | coding Enthusiast",
+    "description1": "I love building fast, beautiful, and user-friendly websites, leveraging my experience with frameworks and a focus on great UX.",
+    "description2": "I’m continuously developing my skills to become a Full Stack Developer in the future",
+    "dowloadResume": "Dowload Resume"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "I'm a Frontend Developer",
+    "description1": "Hello! I’m a frontend developer who loves crafting beautiful and practical UIs. I'm passionate about using modern technologies like React, Next.js, TailwindCSS, and TypeScript to build sleek and high-performance websites.",
+    "description2": "I believe in detail-oriented design, clean code, and continuous learning.",
+    "tool": "Tech Stack & Tools"
+  },
+  "skill": {
+    "title": "Skills & Tools",
+    "section1": "Frontend",
+    "section2": "Backend (Studying)",
+    "section3": "Styling",
+    "section4": "Tools"
+  },
+  "contact": {
+    "title": "My Contact",
+    "subtitle": "Want to work together or talk about a project? You can reach me through any of the channels below.",
+    "dowloadResume": "Dowload Resume"
+  },
+  "experience": {
+    "title": "Experience",
+    "section1": {
+      "company": "Full-time / Freelance",
+      "title": "Frontend Developer",
+      "subtitle": "2022 – Present",
+      "description": "Developed responsive websites using React, Next, Vue, Nuxt, Angular, and Tailwind. Collaborated with clients on UI/UX, and deployed with Vercel."
+    },
+    "section2": {
+      "company": "Personal Project",
+      "title": "Backend Developer (Learning)",
+      "subtitle": "2023 – Present",
+      "description": "Built fullstack projects with Node.js, .NET, Golang, and MySQL. Focused on REST APIs and Authentication."
+    },
+    "section3": {
+      "company": "University",
+      "title": "IT Student",
+      "subtitle": "2020 – Present",
+      "description": "Studying web development, software engineering, and contributing to open-source class projects."
+    }
+  }
+}

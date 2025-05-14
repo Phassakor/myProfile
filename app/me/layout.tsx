@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Loading from "../loading/page";
 
-
 export default function UserLayout({
   children,
 }: {

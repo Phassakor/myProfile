@@ -12,6 +12,13 @@ import {
   SiFigma,
   SiJavascript,
 } from "react-icons/si";
+import en from "../../../locales/en.json";
+import th from "../../../locales/th.json";
+import { useLanguage } from "@/contexts/LanguageContext";
+const translations = {
+  en,
+  th,
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -24,6 +31,7 @@ const fadeUp = {
 
 export default function About() {
   const [mounted, setMounted] = useState(false);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -53,7 +61,7 @@ export default function About() {
         variants={fadeUp}
         className="text-4xl font-bold text-center mb-12"
       >
-        About Me
+        {translations[lang].about.title}
       </motion.h2>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -76,25 +84,20 @@ export default function About() {
           className="space-y-6 text-left"
         >
           <h3 className="text-2xl font-semibold">
-            I'm a Frontend Developer 👨‍💻
+           {translations[lang].about.subtitle} 👨‍💻
           </h3>
           <p className="">
-            สวัสดีครับ ผมเป็น Frontend Dev ที่ชื่นชอบการสร้าง UI
-            ที่ทั้งสวยงามและใช้งานได้จริง
-            มีความหลงใหลในการใช้เทคโนโลยีสมัยใหม่เช่น React, Next.js,
-            TailwindCSS และ TypeScript
-            เพื่อสร้างเว็บไซต์ที่ทันสมัยและประสิทธิภาพสูง
+            {translations[lang].about.description1}
           </p>
           <p className="">
-            ผมเชื่อในงานออกแบบที่ใส่ใจในรายละเอียด การเขียนโค้ดที่สะอาด
-            และการเรียนรู้ที่ไม่หยุดนิ่ง
+            {translations[lang].about.description2}
           </p>
         </motion.div>
       </div>
 
       {/* Tech Stack */}
       <motion.div custom={3} variants={fadeUp} className="mt-16 text-center">
-        <h4 className="text-xl font-semibold mb-6">Tech Stack & Tools</h4>
+        <h4 className="text-xl font-semibold mb-6"> {translations[lang].about.tool}</h4>
         <div className="grid grid-cols-3 md:grid-cols-5 gap-6 justify-items-center text-4xl text-blue-600 dark:text-blue-400">
           <FaReact title="React" />
           <SiNextdotjs title="Next.js" />

@@ -3,33 +3,37 @@
 import { motion } from 'framer-motion';
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
-
-const experiences = [
-  {
-    company: 'Full-time / Freelance',
-    role: 'Frontend Developer',
-    date: '2022 – Present',
-    description:
-      'Developed responsive websites using React, Next, Vue, Nuxt, Angular, and Tailwind. Collaborated with clients on UI/UX, and deployed with Vercel.',
-  },
-  {
-    company: 'Personal Project',
-    role: 'Fullstack Dev (Learning)',
-    date: '2023 – Present',
-    description:
-      'Built fullstack projects with Node.js, .NET, Golang, and MySQL. Focused on REST APIs and Authentication.',
-  },
-  {
-    company: 'University',
-    role: 'IT Student',
-    date: '2020 – Present',
-    description:
-      'Studying web development, software engineering, and contributing to open-source class projects.',
-  },
-];
+import en from "../../../locales/en.json";
+import th from "../../../locales/th.json";
+import { useLanguage } from "@/contexts/LanguageContext";
+const translations = {
+  en,
+  th,
+};
 
 export default function Experience() {
   const [mounted, setMounted] = useState(false);
+  const { lang } = useLanguage();
+  const experiences = [
+    {
+      company: translations[lang].experience.section1.company,
+      role: translations[lang].experience.section1.title,
+      date: translations[lang].experience.section1.subtitle,
+      description: translations[lang].experience.section1.description
+    },
+    {
+      company: translations[lang].experience.section2.company,
+      role: translations[lang].experience.section2.title,
+      date: translations[lang].experience.section2.subtitle,
+      description: translations[lang].experience.section2.description
+    },
+    {
+      company: translations[lang].experience.section3.company,
+      role: translations[lang].experience.section3.title,
+      date: translations[lang].experience.section3.subtitle,
+      description: translations[lang].experience.section3.description
+    },
+  ];
   useEffect(() => {
     const timeout = setTimeout(() => {
       setMounted(true);
@@ -56,7 +60,7 @@ export default function Experience() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        Experience
+        {translations[lang].experience.title}
       </motion.h2>
 
       <div className="max-w-4xl mx-auto space-y-10">

@@ -5,8 +5,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
+import en from "../../../locales/en.json";
+import th from "../../../locales/th.json";
+import { useLanguage } from "@/contexts/LanguageContext";
+const translations = {
+  en,
+  th,
+};
 
 export default function Contact() {
+  const { lang } = useLanguage();
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -44,7 +52,7 @@ export default function Contact() {
           custom={0}
           className="text-3xl font-bold mb-4"
         >
-          My Contact
+         {translations[lang].contact.title}
         </motion.h2>
 
         <motion.p
@@ -52,8 +60,7 @@ export default function Contact() {
           custom={1}
           className="mb-10"
         >
-          ถ้าคุณสนใจร่วมงาน หรืออยากคุยเรื่องโปรเจกต์
-          สามารถติดต่อผมได้ตามช่องทางด้านล่างนี้ครับ 😊
+         {translations[lang].contact.subtitle} 😊
         </motion.p>
 
         <div className="max-w-xl mx-auto space-y-6 text-left">
@@ -114,7 +121,7 @@ export default function Contact() {
               target="_blank"
               className="inline-block px-6 py-3 bg-blue-600 rounded hover:bg-blue-700 transition"
             >
-              Dowload Resume
+              {translations[lang].contact.dowloadResume}
             </motion.a>
           </motion.div>
         </div>

@@ -2,6 +2,7 @@
 import "./globals.css";
 import { Kanit } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const kanit = Kanit({
   subsets: ["thai", "latin"], // รองรับภาษาไทย
@@ -23,7 +24,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
     <body className={`${kanit.className} antialiased w-full`}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </ThemeProvider>
     </body>
   </html>
