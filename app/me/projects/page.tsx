@@ -23,10 +23,21 @@ const fadeUp = {
     transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
   }),
 };
+interface Project {
+  title: string;
+  description: string;
+  images: string[];
+  tech: string[];
+  live: string;
+  code: string;
+  canViewWebsite: boolean;
+  canViewExample: boolean;
+  canViewCode: boolean;
+}
 
 export default function Projects() {
   const [mounted, setMounted] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project  | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const { lang } = useLanguage();
   const projects = [
@@ -153,7 +164,7 @@ export default function Projects() {
     },
   ];
 
-  const handleViewExample = (proj: any) => {
+  const handleViewExample = (proj: Project ) => {
     setSelectedProject(proj);
     setModalOpen(true);
   };

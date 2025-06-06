@@ -134,7 +134,7 @@ export default function Skills() {
               className="grid grid-cols-3 md:grid-cols-5 gap-6"
               variants={container}
             >
-              {section.items.map((skill, idx) => (
+              {section.items.map((skill) => (
                 <motion.div
                   key={skill.name}
                   variants={itemAnim}

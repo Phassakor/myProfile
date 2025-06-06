@@ -3,7 +3,7 @@
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import en from "../locales/en.json";
