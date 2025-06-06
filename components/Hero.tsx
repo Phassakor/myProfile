@@ -55,7 +55,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <p className="bgHeroGIF text-[#F9FAFB] py-4 px-8 rounded-xl shadow-xl cursor-pointer"> {translations[lang].home.dowloadResume}</p>
+           <a href="/phassakorn_dev.pdf" download>
+            <p className="bgHeroGIF text-[#F9FAFB] py-4 px-8 rounded-xl shadow-xl cursor-pointer"> {translations[lang].home.dowloadResume}</p>
+          </a>
         </motion.div>
 
         <span className="top"></span>

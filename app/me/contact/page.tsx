@@ -117,7 +117,7 @@ export default function Contact() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              href="/resume.pdf"
+              href="/phassakorn_dev.pdf"
               target="_blank"
               className="inline-block px-6 py-3 bg-blue-600 rounded hover:bg-blue-700 transition"
             >
