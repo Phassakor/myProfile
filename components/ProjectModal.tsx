@@ -47,7 +47,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="relative bg-white dark:bg-zinc-900 rounded-xl w-[90%] max-w-2xl max-h-[90vh] overflow-y-auto p-6 shadow-xl"
+            className="relative bg-white dark:bg-zinc-900 rounded-xl w-[90%] max-w-[800px] max-h-[90vh] overflow-y-auto p-6 shadow-xl"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}

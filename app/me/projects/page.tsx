@@ -13,23 +13,47 @@ const projects = [
     title: "Portfolio Website",
     description:
       "เว็บไซต์พอร์ตโฟลิโอส่วนตัวที่สร้างด้วย Next.js และ TailwindCSS พร้อม Dark Mode และ Animation.",
-    images: ["/images/test1.jpg"],
+    images: ["/images/aw1.png", "/images/aw2.png", "/images/aw3.png", "/images/aw4.png", "/images/aw5.png"],
     tech: ["Next.js", "TailwindCSS", "TypeScript"],
     live: "https://yourportfolio.com",
     code: "https://github.com/yourusername/portfolio",
     canViewWebsite: true,
-    canViewExample: false,
+    canViewExample: true,
     canViewCode: true,
   },
   {
     title: "Task Manager App",
     description:
       "แอปจัดการงานด้วย Vue.js และ Firebase แบบเรียลไทม์ พร้อม Drag & Drop UI",
-    images: ["/images/test2.jpg", "/images/test1.jpg"],
+    images: ["/images/fnh1.png","/images/fnh2.png","/images/fnh3.png","/images/fnh4.png","/images/fnh5.png","/images/fnh6.png"],
     tech: ["Vue.js", "Firebase", "TailwindCSS"],
     live: "https://yourtaskapp.com",
     code: "https://github.com/yourusername/taskapp",
-    canViewWebsite: false,
+    canViewWebsite: true,
+    canViewExample: true,
+    canViewCode: true,
+  },
+  {
+    title: "gg",
+    description:
+      "แอปจัดการงานด้วย Vue.js และ Firebase แบบเรียลไทม์ พร้อม Drag & Drop UI",
+    images: ["/images/ladkrabang1.png","/images/ladkrabang2.png","/images/ladkrabang3.png","/images/ladkrabang4.png","/images/ladkrabang5.png","/images/ladkrabang6.png"],
+    tech: ["Vue.js", "Firebase", "TailwindCSS"],
+    live: "https://yourtaskapp.com",
+    code: "https://github.com/yourusername/taskapp",
+    canViewWebsite: true,
+    canViewExample: true,
+    canViewCode: true,
+  },
+  {
+    title: "ererer",
+    description:
+      "แอปจัดการงานด้วย Vue.js และ Firebase แบบเรียลไทม์ พร้อม Drag & Drop UI",
+    images: ["/images/hr1.png","/images/hr2.png","/images/hr3.png","/images/hr4.png","/images/hr5.png","/images/hr6.png"],
+    tech: ["Vue.js", "Firebase", "TailwindCSS"],
+    live: "https://yourtaskapp.com",
+    code: "https://github.com/yourusername/taskapp",
+    canViewWebsite: true,
     canViewExample: true,
     canViewCode: true,
   },
@@ -97,7 +121,7 @@ export default function Projects() {
               alt={proj.title}
               width={800}
               height={400}
-              className="w-full h-52 object-cover"
+              className="w-full h-[400px] object-cover"
             />
             <div className="p-6 space-y-3">
               <h3 className="text-2xl text-gray-700 dark:text-gray-300 font-semibold">
@@ -126,7 +150,7 @@ export default function Projects() {
                     <FaExternalLinkAlt /> Website
                   </Link>
                 )}
-                {proj.canViewExample && !proj.canViewWebsite && (
+                {proj.canViewExample && (
                   <button
                     onClick={() => handleViewExample(proj)}
                     className="flex items-center gap-1 text-blue-600 hover:underline"
