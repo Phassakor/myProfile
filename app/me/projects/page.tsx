@@ -6,13 +6,14 @@ import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
+import ProjectModal from "@/components/ProjectModal";
 
 const projects = [
   {
     title: "Portfolio Website",
     description:
       "เว็บไซต์พอร์ตโฟลิโอส่วนตัวที่สร้างด้วย Next.js และ TailwindCSS พร้อม Dark Mode และ Animation.",
-    image: "/images/test1.jpg",
+    images: ["/images/test1.jpg"],
     tech: ["Next.js", "TailwindCSS", "TypeScript"],
     live: "https://yourportfolio.com",
     code: "https://github.com/yourusername/portfolio",
@@ -24,7 +25,7 @@ const projects = [
     title: "Task Manager App",
     description:
       "แอปจัดการงานด้วย Vue.js และ Firebase แบบเรียลไทม์ พร้อม Drag & Drop UI",
-    image: "/images/test2.jpg",
+    images: ["/images/test2.jpg", "/images/test1.jpg"],
     tech: ["Vue.js", "Firebase", "TailwindCSS"],
     live: "https://yourtaskapp.com",
     code: "https://github.com/yourusername/taskapp",
@@ -45,6 +46,14 @@ const fadeUp = {
 
 export default function Projects() {
   const [mounted, setMounted] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleViewExample = (proj: any) => {
+    setSelectedProject(proj);
+    setModalOpen(true);
+  };
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setMounted(true);
@@ -84,7 +93,7 @@ export default function Projects() {
             className="bg-gray-100 dark:bg-zinc-800 rounded-2xl shadow-lg overflow-hidden"
           >
             <Image
-              src={proj.image}
+              src={proj.images[0]}
               alt={proj.title}
               width={800}
               height={400}
@@ -117,14 +126,13 @@ export default function Projects() {
                     <FaExternalLinkAlt /> Website
                   </Link>
                 )}
-                {proj.canViewExample && (
-                  <Link
-                    href={proj.live}
-                    target="_blank"
+                {proj.canViewExample && !proj.canViewWebsite && (
+                  <button
+                    onClick={() => handleViewExample(proj)}
                     className="flex items-center gap-1 text-blue-600 hover:underline"
                   >
                     <FaExternalLinkAlt /> View
-                  </Link>
+                  </button>
                 )}
                 {proj.canViewCode && (
                   <Link
@@ -140,6 +148,11 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+      <ProjectModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        project={selectedProject}
+      />
     </motion.section>
   );
 }
