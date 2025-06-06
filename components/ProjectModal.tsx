@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type ProjectModalProps = {
@@ -61,7 +60,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             </button>
 
             <div className="relative mb-4">
-              <Image
+              <img
                 src={project.images[currentIndex]}
                 alt={`Image ${currentIndex + 1}`}
                 width={800}

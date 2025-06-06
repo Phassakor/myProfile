@@ -2,7 +2,6 @@
 
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaReact, FaGithub, FaHtml5, FaCss3Alt, FaVuejs } from "react-icons/fa";
 import {
@@ -67,13 +66,12 @@ export default function About() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Profile Image */}
         <motion.div custom={1} variants={fadeUp} className="flex-shrink-0">
-        <Image
+        <img 
           src="/images/devImg.png"
           alt="MyDev"
           width={250}
           height={250}
           className="rounded-full object-cover border-4 border-blue-500 shadow-lg"
-          priority
         />
         </motion.div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaEye, FaExternalLinkAlt } from "react-icons/fa";
 import Loading from "@/app/loading/page";
@@ -207,7 +206,7 @@ export default function Projects() {
             variants={fadeUp}
             className="bg-gray-100 dark:bg-zinc-800 rounded-2xl shadow-lg overflow-hidden"
           >
-            <Image
+            <img
               src={proj.images[0]}
               alt={proj.title}
               width={800}
