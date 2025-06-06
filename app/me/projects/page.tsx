@@ -1,30 +1,37 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    description: 'เว็บไซต์พอร์ตโฟลิโอส่วนตัวที่สร้างด้วย Next.js และ TailwindCSS พร้อม Dark Mode และ Animation.',
-    image: '/images/test1.jpg',
-    tech: ['Next.js', 'TailwindCSS', 'TypeScript'],
-    live: 'https://yourportfolio.com',
-    code: 'https://github.com/yourusername/portfolio',
+    title: "Portfolio Website",
+    description:
+      "เว็บไซต์พอร์ตโฟลิโอส่วนตัวที่สร้างด้วย Next.js และ TailwindCSS พร้อม Dark Mode และ Animation.",
+    image: "/images/test1.jpg",
+    tech: ["Next.js", "TailwindCSS", "TypeScript"],
+    live: "https://yourportfolio.com",
+    code: "https://github.com/yourusername/portfolio",
+    canViewWebsite: true,
+    canViewExample: false,
+    canViewCode: true,
   },
   {
-    title: 'Task Manager App',
-    description: 'แอปจัดการงานด้วย Vue.js และ Firebase แบบเรียลไทม์ พร้อม Drag & Drop UI',
-    image: '/images/test2.jpg',
-    tech: ['Vue.js', 'Firebase', 'TailwindCSS'],
-    live: 'https://yourtaskapp.com',
-    code: 'https://github.com/yourusername/taskapp',
+    title: "Task Manager App",
+    description:
+      "แอปจัดการงานด้วย Vue.js และ Firebase แบบเรียลไทม์ พร้อม Drag & Drop UI",
+    image: "/images/test2.jpg",
+    tech: ["Vue.js", "Firebase", "TailwindCSS"],
+    live: "https://yourtaskapp.com",
+    code: "https://github.com/yourusername/taskapp",
+    canViewWebsite: false,
+    canViewExample: true,
+    canViewCode: true,
   },
-  // เพิ่มโปรเจกต์ตามต้องการ
 ];
 
 const fadeUp = {
@@ -32,7 +39,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2, duration: 0.6, ease: 'easeOut' },
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
   }),
 };
 
@@ -84,8 +91,12 @@ export default function Projects() {
               className="w-full h-52 object-cover"
             />
             <div className="p-6 space-y-3">
-              <h3 className="text-2xl text-gray-700 dark:text-gray-300 font-semibold">{proj.title}</h3>
-              <p className="text-gray-700 dark:text-gray-300">{proj.description}</p>
+              <h3 className="text-2xl text-gray-700 dark:text-gray-300 font-semibold">
+                {proj.title}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                {proj.description}
+              </p>
               <div className="flex flex-wrap gap-2 text-sm">
                 {proj.tech.map((t) => (
                   <span
@@ -97,20 +108,33 @@ export default function Projects() {
                 ))}
               </div>
               <div className="flex gap-4 mt-4">
-                <Link
-                  href={proj.live}
-                  target="_blank"
-                  className="flex items-center gap-1 text-blue-600 hover:underline"
-                >
-                  <FaExternalLinkAlt /> View
-                </Link>
-                <Link
-                  href={proj.code}
-                  target="_blank"
-                  className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline"
-                >
-                  <FaGithub /> Code
-                </Link>
+                {proj.canViewWebsite && (
+                  <Link
+                    href={proj.live}
+                    target="_blank"
+                    className="flex items-center gap-1 text-blue-600 hover:underline"
+                  >
+                    <FaExternalLinkAlt /> Website
+                  </Link>
+                )}
+                {proj.canViewExample && (
+                  <Link
+                    href={proj.live}
+                    target="_blank"
+                    className="flex items-center gap-1 text-blue-600 hover:underline"
+                  >
+                    <FaExternalLinkAlt /> View
+                  </Link>
+                )}
+                {proj.canViewCode && (
+                  <Link
+                    href={proj.code}
+                    target="_blank"
+                    className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline"
+                  >
+                    <FaGithub /> Code
+                  </Link>
+                )}
               </div>
             </div>
           </motion.div>
