@@ -3,109 +3,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaEye, FaExternalLinkAlt } from "react-icons/fa";
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
 import ProjectModal from "@/components/ProjectModal";
-
-const projects = [
-  {
-    title: "Asset World Webapp",
-    description:
-      "เว็บไซต์ประกาศ ซื้อ ขาย เช่า ขายฝากสินทรัพย์และอสังหาริมทรัพย์ทุกประเภท",
-    images: ["/images/aw1.png", "/images/aw2.png", "/images/aw3.png", "/images/aw4.png", "/images/aw5.png"],
-    tech: ["Nuxt3.js", "TailwindCSS"],
-    live: "https://aw.asset-world.com/home",
-    code: "",
-    canViewWebsite: true,
-    canViewExample: true,
-    canViewCode: false,
-  },
-  {
-    title: "Fn-hospita Webapp",
-    description:
-      "เว็บไซต์ที่ใช้คำนวนผลตรวจจากการอัพโหลดข้อมูลจากฐานข้อมูลของโรงพยาบาลเพื่อให้ได้ผลแลปไว้ระบุโรคและแนวทางการปฏิบัติสำหรับผู้ป่วย",
-    images: ["/images/fnh1.png","/images/fnh2.png","/images/fnh3.png","/images/fnh4.png","/images/fnh5.png","/images/fnh6.png"],
-    tech: ["Nuxt2.js","TailwindCSS"],
-    live: "https://www.fn-hospital.com/",
-    code: "",
-    canViewWebsite: true,
-    canViewExample: true,
-    canViewCode: false,
-  },
-  {
-    title: "Ladkrabang Profile Webapp",
-    description:
-      "เว็บไซต์ของสถานีตำรวจนครบาลลาดกระบัง",
-    images: ["/images/ladkrabang1.png","/images/ladkrabang2.png","/images/ladkrabang3.png","/images/ladkrabang4.png","/images/ladkrabang5.png","/images/ladkrabang6.png"],
-    tech: ["Vue.js", "TailwindCSS"],
-    live: "https://ladkrabang.metro.police.go.th/",
-    code: "",
-    canViewWebsite: true,
-    canViewExample: true,
-    canViewCode: false,
-  },
-  {
-    title: "Smart HR Webapp",
-    description:
-      "แอปพลิเคชั่นที่ช่วยในการจัดการ HR แบบครบวงจร",
-    images: ["/images/hr1.png","/images/hr2.png","/images/hr3.png","/images/hr4.png","/images/hr5.png","/images/hr6.png"],
-    tech: ["Nuxt3.js", "Firebase", "TailwindCSS", "Developing"],
-    live: "http://admin.ai-smarthr.com/smartHR",
-    code: "",
-    canViewWebsite: true,
-    canViewExample: true,
-    canViewCode: false,
-  },
-  {
-    title: "Hero App",
-    description:
-      "แอปพลิเคชันแจ้งเตือนเเผ่นดินไหว",
-    images: ["/images/hero1.png","/images/hero2.png","/images/hero3.png","/images/hero4.png","/images/hero5.png"],
-    tech: ["Vue.js", "Firebase", "TailwindCSS", "Developing"],
-    live: "",
-    code: "",
-    canViewWebsite: false,
-    canViewExample: true,
-    canViewCode: false,
-  },
-  {
-    title: "Cancer API",
-    description:
-      "api สำหรับเว็บไซต์ cancer",
-    images: ["/images/apicancer1.png"],
-    tech: [".net", "C#", "Studying"],
-    live: "http://119.59.118.117/cancerAPI/swagger/index.html",
-    code: "https://github.com/Phassakor/cancer-API",
-    canViewWebsite: true,
-    canViewExample: false,
-    canViewCode: true,
-  },
-  {
-    title: "FMone API",
-    description:
-      "api สำหรับเว็บไซต์ FMone web",
-    images: ["/images/apifmone1.png"],
-    tech: [".net", "C#", "Studying"],
-    live: "http://119.59.118.117/fmoneapi/swagger/index.html",
-    code: "https://github.com/Phassakor/FMoneAPI",
-    canViewWebsite: true,
-    canViewExample: false,
-    canViewCode: true,
-  },
-  {
-    title: "Lovely Pets API",
-    description:
-      "api สำหรับเอปพลิเคชัน Pets",
-    images: ["/images/apipet1.png"],
-    tech: ["GO", "golang", "Studying"],
-    live: "",
-    code: "https://github.com/Phassakor/lovelypet",
-    canViewWebsite: false,
-    canViewExample: false,
-    canViewCode: true,
-  },
-];
+import en from "../../../locales/en.json";
+import th from "../../../locales/th.json";
+import { useLanguage } from "@/contexts/LanguageContext";
+const translations = {
+  en,
+  th,
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -120,6 +28,130 @@ export default function Projects() {
   const [mounted, setMounted] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const { lang } = useLanguage();
+  const projects = [
+    {
+      title: "Asset World Webapp",
+      description: translations[lang].project.descriptionCard1,
+      images: [
+        "/images/aw1.png",
+        "/images/aw2.png",
+        "/images/aw3.png",
+        "/images/aw4.png",
+        "/images/aw5.png",
+      ],
+      tech: ["Nuxt3.js", "TailwindCSS"],
+      live: "https://aw.asset-world.com/home",
+      code: "",
+      canViewWebsite: true,
+      canViewExample: true,
+      canViewCode: false,
+    },
+    {
+      title: "Fn-hospita Webapp",
+      description: translations[lang].project.descriptionCard2,
+      images: [
+        "/images/fnh1.png",
+        "/images/fnh2.png",
+        "/images/fnh3.png",
+        "/images/fnh4.png",
+        "/images/fnh5.png",
+        "/images/fnh6.png",
+      ],
+      tech: ["Nuxt2.js", "TailwindCSS"],
+      live: "https://www.fn-hospital.com/",
+      code: "",
+      canViewWebsite: true,
+      canViewExample: true,
+      canViewCode: false,
+    },
+    {
+      title: "Ladkrabang Profile Webapp",
+      description: translations[lang].project.descriptionCard3,
+      images: [
+        "/images/ladkrabang1.png",
+        "/images/ladkrabang2.png",
+        "/images/ladkrabang3.png",
+        "/images/ladkrabang4.png",
+        "/images/ladkrabang5.png",
+        "/images/ladkrabang6.png",
+      ],
+      tech: ["Vue.js", "TailwindCSS"],
+      live: "https://ladkrabang.metro.police.go.th/",
+      code: "",
+      canViewWebsite: true,
+      canViewExample: true,
+      canViewCode: false,
+    },
+    {
+      title: "Smart HR Webapp",
+      description: translations[lang].project.descriptionCard4,
+      images: [
+        "/images/hr1.png",
+        "/images/hr2.png",
+        "/images/hr3.png",
+        "/images/hr4.png",
+        "/images/hr5.png",
+        "/images/hr6.png",
+      ],
+      tech: ["Nuxt3.js", "Firebase", "TailwindCSS", "Developing"],
+      live: "http://admin.ai-smarthr.com/smartHR",
+      code: "",
+      canViewWebsite: true,
+      canViewExample: true,
+      canViewCode: false,
+    },
+    {
+      title: "Hero App",
+      description: translations[lang].project.descriptionCard5,
+      images: [
+        "/images/hero1.png",
+        "/images/hero2.png",
+        "/images/hero3.png",
+        "/images/hero4.png",
+        "/images/hero5.png",
+      ],
+      tech: ["Vue.js", "Firebase", "TailwindCSS", "Developing"],
+      live: "",
+      code: "",
+      canViewWebsite: false,
+      canViewExample: true,
+      canViewCode: false,
+    },
+    {
+      title: "Cancer API",
+      description: translations[lang].project.descriptionCard6,
+      images: ["/images/apicancer1.png"],
+      tech: [".net", "C#", "Studying"],
+      live: "http://119.59.118.117/cancerAPI/swagger/index.html",
+      code: "https://github.com/Phassakor/cancer-API",
+      canViewWebsite: true,
+      canViewExample: false,
+      canViewCode: true,
+    },
+    {
+      title: "FMone API",
+      description: translations[lang].project.descriptionCard7,
+      images: ["/images/apifmone1.png"],
+      tech: [".net", "C#", "Studying"],
+      live: "http://119.59.118.117/fmoneapi/swagger/index.html",
+      code: "https://github.com/Phassakor/FMoneAPI",
+      canViewWebsite: true,
+      canViewExample: false,
+      canViewCode: true,
+    },
+    {
+      title: "Lovely Pets API",
+      description: translations[lang].project.descriptionCard8,
+      images: ["/images/apipet1.png"],
+      tech: ["GO", "golang", "Studying"],
+      live: "",
+      code: "https://github.com/Phassakor/lovelypet",
+      canViewWebsite: false,
+      canViewExample: false,
+      canViewCode: true,
+    },
+  ];
 
   const handleViewExample = (proj: any) => {
     setSelectedProject(proj);
@@ -153,7 +185,7 @@ export default function Projects() {
         variants={fadeUp}
         className="text-4xl font-bold text-center mb-12"
       >
-        Projects
+        {translations[lang].project.title}
       </motion.h2>
 
       <div className="grid gap-10 md:grid-cols-2">
@@ -195,7 +227,7 @@ export default function Projects() {
                     target="_blank"
                     className="flex items-center gap-1 text-blue-600 hover:underline"
                   >
-                    <FaExternalLinkAlt /> Website
+                    <FaExternalLinkAlt /> {translations[lang].project.website}
                   </Link>
                 )}
                 {proj.canViewExample && (
@@ -203,7 +235,7 @@ export default function Projects() {
                     onClick={() => handleViewExample(proj)}
                     className="flex items-center gap-1 text-blue-600 hover:underline"
                   >
-                    <FaExternalLinkAlt /> View
+                    <FaEye /> {translations[lang].project.view}
                   </button>
                 )}
                 {proj.canViewCode && (

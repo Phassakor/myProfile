@@ -54,5 +54,18 @@
       "subtitle": "2020 – Present",
       "description": "Studying web development, software engineering, and contributing to open-source class projects."
     }
+  },
+ "project": {
+    "title": "Projects",
+    "descriptionCard1": "Real Estate Listing Website Developed a platform for posting listings to buy, sell, rent, and consign all types of assets and real estate.",
+    "descriptionCard2": "Medical Test Result Calculation Website Created a system that processes data uploaded from hospital databases to help identify diseases and recommend patient care guidelines.",
+    "descriptionCard3": "Lat Krabang Metropolitan Police Station Website Developed the official website for the Lat Krabang Metropolitan Police Station.",
+    "descriptionCard4": "HR Management Application Built a comprehensive application for managing HR tasks such as employee records, leave requests, and attendance tracking.",
+    "descriptionCard5": "Earthquake Alert Application Developed an application that provides real-time earthquake alerts.",
+    "descriptionCard6": "API for Cancer Diagnosis Website Designed and developed an API to support a cancer diagnosis platform.",
+    "descriptionCard7": "API for FMone Website Built backend APIs for FMone web system to manage data and user access.",
+    "descriptionCard8": "API for Pets Management Application Developed an API for a pet management app, supporting health tracking and veterinary history.",
+    "website": "Website",
+    "view": "View"
   }
 }
