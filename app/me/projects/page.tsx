@@ -121,7 +121,7 @@ export default function Projects() {
         "/images/hero4.png",
         "/images/hero5.png",
       ],
-      tech: ["Vue.js", "Firebase", "TailwindCSS", "Developing"],
+      tech: ["Next.js", "Typescript ", "TailwindCSS", "Developing"],
       live: "",
       code: "",
       canViewWebsite: false,
