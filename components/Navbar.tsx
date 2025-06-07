@@ -25,9 +25,9 @@ const { lang, toggleLang } = useLanguage();
   const navItems = [
     { name: translations[lang].navbar.home, href: "/me/home" },
     { name: translations[lang].navbar.about, href: "/me/about" },
-    { name: translations[lang].navbar.skill, href: "/me/skills" },
+    // { name: translations[lang].navbar.skill, href: "/me/skills" },
     { name: translations[lang].navbar.project, href: "/me/projects" },
-    { name: translations[lang].navbar.experience, href: "/me/experience" },
+    // { name: translations[lang].navbar.experience, href: "/me/experience" },
     { name: translations[lang].navbar.contact, href: "/me/contact" },
   ];
 

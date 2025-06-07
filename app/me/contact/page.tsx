@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, Phone, GitBranch, } from "lucide-react";
+import { Mail, MapPin, Phone, GitBranch, Linkedin  } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Loading from "@/app/loading/page";
@@ -86,7 +86,12 @@ export default function Contact() {
               link: "https://github.com/Phassakor/myProfile",
               delay: 5,
             },
-           
+             {
+              icon: <Linkedin  />,
+              text: "linkedin",
+              link: "linkedin.com/in/ภาสกร-สุวรรณโท-a4180a343",
+              delay: 6,
+            },
           ].map(({ icon, text, link, delay }, i) => (
             <motion.div
               key={i}
