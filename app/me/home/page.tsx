@@ -110,25 +110,6 @@ export default function Home() {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
   };
-  const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
-  }),
-};
-interface Project {
-  title: string;
-  description: string;
-  images: string[];
-  tech: string[];
-  live: string;
-  code: string;
-  canViewWebsite: boolean;
-  canViewExample: boolean;
-  canViewCode: boolean;
-}
 
   useEffect(() => {
     const timeout = setTimeout(() => {
