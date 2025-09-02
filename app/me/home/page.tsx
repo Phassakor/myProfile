@@ -65,8 +65,8 @@ export default function Home() {
     {
       title: translations[lang].skill.section2,
       items: [
-        { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
         { name: ".NET", icon: <SiDotnet className="text-purple-700" /> },
+        { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
         { name: "Golang", icon: <SiGo className="text-sky-600" /> },
         { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
       ],

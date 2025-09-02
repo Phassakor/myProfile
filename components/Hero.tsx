@@ -20,7 +20,7 @@ export default function Hero() {
       id="home"
       className={`min-h-screen flex items-center justify-center px-4 sm:px-8 ${theme === "dark" ? "DarkMode" : "LightMode"}`}
     >
-      <div className={`card max-w-3xl text-center p-10 rounded-lg transition-all duration-500 ease-in-out h-[250px] hover:h-[400px] z-10 ${theme === "dark" ? "shadow-lg" : "shadow-lg"}`}>
+      <div className={`card max-w-3xl text-center p-10 rounded-lg transition-all duration-500 ease-in-out md:h-[250px] h-auto hover:h-[400px] z-10 ${theme === "dark" ? "shadow-lg" : "shadow-lg"}`}>
         <motion.h1
           className="sm:text-2xl md:text-4xl xl:text-5xl text-xl font-extrabold mb-4"
           initial={{ opacity: 0, y: 20 }}

@@ -109,7 +109,7 @@ export default function About() {
       </div>
 
       {/* Tech Stack */}
-      <motion.div custom={3} variants={fadeUp} className="mt-16 text-center">
+      {/* <motion.div custom={3} variants={fadeUp} className="mt-16 text-center">
         <h4 className="text-xl font-semibold mb-6">
           {" "}
           {translations[lang].about.tool}
@@ -126,7 +126,7 @@ export default function About() {
           <FaHtml5 title="HTML5" />
           <FaCss3Alt title="CSS3" />
         </div>
-      </motion.div>
+      </motion.div> */}
 
       <p className="my-40"></p>
 

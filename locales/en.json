@@ -10,22 +10,22 @@
   },
   "home": {
     "title": "Hello! My name is BesT",
-    "subtitle": "Frontend Developer | coding Enthusiast",
-    "description1": "I love building fast, beautiful, and user-friendly websites, leveraging my experience with frameworks and a focus on great UX.",
-    "description2": "I’m continuously developing my skills to become a Full Stack Developer in the future",
+    "subtitle": "Full Stack Developer | coding Enthusiast",
+    "description1": "As a Full Stack Developer, I specialize in creating fast, responsive, and user-centric web applications.",
+    "description2": "I combine strong frontend design skills with robust backend development, using modern tools and frameworks to deliver seamless digital experiences.",
     "dowloadResume": "Dowload Resume"
   },
   "about": {
     "title": "About Me",
-    "subtitle": "I'm a Frontend Developer",
-    "description1": "Hello! I’m a frontend developer who loves crafting beautiful and practical UIs. I'm passionate about using modern technologies like React, Next.js, TailwindCSS, and TypeScript to build sleek and high-performance websites.",
-    "description2": "I believe in detail-oriented design, clean code, and continuous learning.",
+    "subtitle": "I'm a Full Stack Developer",
+    "description1": " Full Stack Developer with 3 years of experience. Strong expertise in Front-end development (2 years) with Nuxt.js, Vue.js, React, Next.js, Angular, and UI/UX design. Hands-on Back-end experience (1 year) with .NET, Node.js, and currently learning Go.",
+    "description2": "Skilled in deployment on Windows Server (IIS) and hosting environments. Passionate about delivering scalable and responsive web applications.",
     "tool": "Tech Stack & Tools"
   },
   "skill": {
     "title": "Skills & Tools",
     "section1": "Frontend",
-    "section2": "Backend (Studying)",
+    "section2": "Backend",
     "section3": "Styling",
     "section4": "Tools"
   },
@@ -37,14 +37,14 @@
   "experience": {
     "title": "Experience",
     "section1": {
-      "company": "Full-time / Freelance",
-      "title": "Frontend Developer",
+      "company": "Full-time",
+      "title": "Full Stack Developer",
       "subtitle": "2022 – Present",
       "description": "Developed responsive websites using React, Next, Vue, Nuxt, Angular, and Tailwind. Collaborated with clients on UI/UX, and deployed with windows Server and Hosting."
     },
     "section2": {
-      "company": "Personal Project",
-      "title": "Backend Developer (Learning)",
+      "company": "Full-time",
+      "title": "Backend Developer",
       "subtitle": "2023 – Present",
       "description": "Built fullstack projects with Node.js, .NET, Golang, and MySQL. Focused on REST APIs and Authentication."
     },

@@ -89,7 +89,7 @@ export default function Contact() {
              {
               icon: <Linkedin  />,
               text: "linkedin",
-              link: "linkedin.com/in/ภาสกร-สุวรรณโท-a4180a343",
+              link: "https://www.linkedin.com/in/%E0%B8%A0%E0%B8%B2%E0%B8%AA%E0%B8%81%E0%B8%A3-%E0%B8%AA%E0%B8%B8%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%93%E0%B9%82%E0%B8%97-a4180a343/",
               delay: 6,
             },
           ].map(({ icon, text, link, delay }, i) => (
