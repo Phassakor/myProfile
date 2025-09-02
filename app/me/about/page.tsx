@@ -3,14 +3,14 @@
 import Loading from "@/app/loading/page";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaGithub, FaHtml5, FaCss3Alt, FaVuejs } from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTypescript,
-  SiFigma,
-  SiJavascript,
-} from "react-icons/si";
+// import { FaReact, FaGithub, FaHtml5, FaCss3Alt, FaVuejs } from "react-icons/fa";
+// import {
+//   SiNextdotjs,
+//   SiTailwindcss,
+//   SiTypescript,
+//   SiFigma,
+//   SiJavascript,
+// } from "react-icons/si";
 import en from "../../../locales/en.json";
 import th from "../../../locales/th.json";
 import { useLanguage } from "@/contexts/LanguageContext";
